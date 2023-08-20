@@ -1,0 +1,19 @@
+.hero-container{
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-container--text p {
+        text-align: center;
+        font-family: Poppins;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+}
+.hero-container--img {
+    width: 212px;
+        height: 212px;
+        flex-shrink: 0;
+}
