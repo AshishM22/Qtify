@@ -14,6 +14,28 @@
 }
 .hero-container--img {
     width: 212px;
-        height: 212px;
-        flex-shrink: 0;
+    height: 212px;
+    flex-shrink: 0;
+}
+@media (max-width: 500px) {
+    .hero-container--text p {
+            text-align: center;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    
+        .hero-container--img {
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+        }
+}
+@media (max-width: 350px) {
+   .hero-container--img {
+        width: 100px;
+        height: 100px;
+    }
 }

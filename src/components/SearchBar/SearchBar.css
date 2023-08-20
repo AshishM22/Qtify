@@ -1,23 +1,31 @@
 .search-container {
   position: relative;
 }
-.search-container img {
+.searchIcon {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: -10px;
+  top: 0;
+  background-color: var(--white-color);
+  height: 48px;
+  width: max-content;
+  border: none;
+  border: 1px solid #121212;
+  border-radius: 0 8px 8px 0; 
+  padding: 5px;
+  padding-right: 10px;
 }
 
 .search-container input {
   width: 568px;
   height: 48px;
   border-radius: 8px;
-  border: 1px solid #121212;
   padding: 10px;
+  padding-right: 0;
 }
 @media (max-width: 1000px) {
   .search-container input {
     width: 400px;
-    height: 40px;
+    height: 48px;
     border-radius: 8px;
     border: 1px solid #121212;
     padding: 5px;
@@ -26,10 +34,7 @@
 @media (max-width: 700px) {
   .search-container input {
     width: 300px;
-    height: 40px;
-    border-radius: 8px;
-    border: 1px solid #121212;
-    padding: 5px;
+    height: 48px;
   }
 }
 @media (max-width: 500px) {

@@ -2,10 +2,16 @@ import search from "../../assets/Search.svg";
 import "./SearchBar.css";
 
 const SearchBar = ({ placeholder }) => {
+  function handleSubmit(e) {
+    console.log(e);
+    e.preventDefault();
+  }
   return (
     <div className="search-container">
       <input type="text" placeholder={placeholder} className="SearchField" />
-      <img src={search} alt="Search" className="searchIcon" />
+      <button onClick={handleSubmit} type="submit" className="searchIcon">
+        <img src={search} alt="Search" />
+      </button>
     </div>
   );
 };
