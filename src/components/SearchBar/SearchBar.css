@@ -1,0 +1,43 @@
+.search-container {
+  position: relative;
+}
+.search-container img {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.search-container input {
+  width: 568px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #121212;
+  padding: 5px;
+}
+@media (max-width: 1000px) {
+  .search-container input {
+    width: 400px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #121212;
+    padding: 5px;
+  }
+}
+@media (max-width: 700px) {
+  .search-container input {
+    width: 300px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #121212;
+    padding: 5px;
+  }
+}
+@media (max-width: 500px) {
+  .search-container input {
+    width: 95vw;
+  }
+  .search-container {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
