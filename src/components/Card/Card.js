@@ -1,10 +1,8 @@
 import React from "react";
 import "./Card.css";
-import cardImage from "../../assets/CardImage.png"; // Import the image
 import { Tooltip, Chip, Box, Tabs, Tab } from "@mui/material";
 
 const Card = ({ item, type }) => {
-  // console.log(type);
   if (type === "songs") {
     const { title, likes, image, songs } = item;
 
