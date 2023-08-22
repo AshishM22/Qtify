@@ -30,6 +30,7 @@ export default function App() {
       <NavBar />
       <Hero />
       <GridBox title="Top Albums" data={topAlbumsData} />
+      <GridBox title="New Albums" data={newAlbumsData} />
     </>
   );
 }
