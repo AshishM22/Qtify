@@ -34,4 +34,8 @@
     font-style: normal;
     font-weight: 400;
     margin: 3px 0 10px 0;
+    width: 159px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
 }

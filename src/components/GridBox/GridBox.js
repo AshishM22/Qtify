@@ -9,10 +9,17 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import LeftNavigation from "../Carousel/LeftNavigation/LeftNavigation";
 import RightNavigation from "../Carousel/RightNavigation/RightNavigation";
+import CustomTabs from "../CustomTabs/CustomTabs";
 
 function GridBox({ title, data, type }) {
   const [buttonText, setButtonText] = useState("Show all");
   const [isCollapse, setIsCollapse] = useState(true);
+  const [filteredData, setFilteredData] = useState([]);
+  const [value, setValue] = React.useState(0);
+
+  useEffect(() => {
+    setFilteredData(data);
+  }, [data]);
 
   const handleToggle = () => {
     if (buttonText === "Show all") {
@@ -23,6 +30,26 @@ function GridBox({ title, data, type }) {
       setIsCollapse(true);
     }
   };
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    if (newValue === 0) {
+      setFilteredData(data);
+      return;
+    }
+    let currentGenre =
+      newValue === 1
+        ? "rock"
+        : newValue === 2
+        ? "pop"
+        : newValue === 3
+        ? "jazz"
+        : newValue === 4
+        ? "blues"
+        : "unknown";
+    const updatedData = data.filter((item) => item.genre.key === currentGenre);
+    console.log(updatedData);
+    setFilteredData(updatedData);
+  };
 
   return (
     <>
@@ -30,6 +57,9 @@ function GridBox({ title, data, type }) {
         <h3>{title}</h3>
         <button onClick={handleToggle}>{buttonText}</button>
       </div>
+      {type === "songs" && (
+        <CustomTabs data={data} value={value} handleChange={handleChange} />
+      )}
 
       {!isCollapse ? (
         <div
@@ -37,7 +67,7 @@ function GridBox({ title, data, type }) {
             "grid-container" + (isCollapse ? "" : " grid-container--collapse")
           }
         >
-          {data.map((item) => (
+          {filteredData.map((item) => (
             <Card item={item} type={type} />
           ))}
         </div>
@@ -58,7 +88,7 @@ function GridBox({ title, data, type }) {
           <LeftNavigation />
           <RightNavigation />
 
-          {data.map((item) => (
+          {filteredData.map((item) => (
             <SwiperSlide>
               <Card item={item} type={type} />
             </SwiperSlide>

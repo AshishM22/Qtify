@@ -23,7 +23,7 @@ export default function App() {
     setNewAlbumsData(newAlbumsResponse);
 
     const songsResponse = await fetchSongs();
-    //setSongs(songsResponse);
+    setSongs(songsResponse);
   };
   return (
     <>
@@ -31,6 +31,7 @@ export default function App() {
       <Hero />
       <GridBox title="Top Albums" data={topAlbumsData} />
       <GridBox title="New Albums" data={newAlbumsData} />
+      <GridBox title="Songs" data={songs} type="songs" />
     </>
   );
 }
