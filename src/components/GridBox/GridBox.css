@@ -1,9 +1,9 @@
-.grid-box{
+.grid-box--header{
     display: flex;
     justify-content: space-between;
     margin: 20px 20px 10px 31px;
 }
-.grid-box button{
+.grid-box--header button{
     background-color: var(--black-color);
     color: var(--primary-400, #34C94B);
     text-align: right;
@@ -15,4 +15,7 @@
     display: flex;
     column-gap: 40px;
     margin : 0 40px 0 40px;
+}
+.grid-container--collapse{
+    flex-wrap: wrap;
 }

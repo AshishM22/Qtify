@@ -4,25 +4,32 @@ import Hero from "./components/Hero/Hero";
 import Card from "./components/Card/Card";
 import GridBox from "./components/GridBox/GridBox";
 import { useEffect, useState } from "react";
-import { fetchTopAlbums } from "./api/api";
+import { fetchTopAlbums, fetchNewAlbums, fetchSongs } from "./api/api";
 
 export default function App() {
-  const [data, setData] = useState([]);
+  const [topAlbumsData, setTopAlbumsData] = useState([]);
+  const [newAlbumsData, setNewAlbumsData] = useState([]);
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     generateData();
   }, []);
 
   const generateData = async () => {
-    const response = await fetchTopAlbums();
-    console.log(response);
-    setData(response);
+    const topAlbumsResponse = await fetchTopAlbums();
+    setTopAlbumsData(topAlbumsResponse);
+
+    const newAlbumsResponse = await fetchNewAlbums();
+    setNewAlbumsData(newAlbumsResponse);
+
+    const songsResponse = await fetchSongs();
+    //setSongs(songsResponse);
   };
   return (
     <>
       <NavBar />
       <Hero />
-      <GridBox title="Top Albums" data={data} />
+      <GridBox title="Top Albums" data={topAlbumsData} />
     </>
   );
 }

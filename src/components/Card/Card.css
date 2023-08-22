@@ -1,24 +1,25 @@
-.card-container-main-section{
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 6px;
-}
 .card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
     width: 159px;
     height: 205px;
-    flex-shrink: 0;
     background-color: var(--white-color);
     color: var(--black-color);
     border-radius: 10px
- }
+}
+.card-container img {
+    width: 100%;
+    height: 80%;
+}
 .card-container--body{
     display: inline-flex;
-        padding: 4px 8px;
-        align-items: flex-start;
-        gap: 1px;
+    padding: 4px 8px;
+    align-items: center;
+    
 }
-.card-container--body span{
+.card-container--body .chip{
     padding: 4px 8px;
     border-radius: 10px;
     background: var(--black-color);
@@ -27,9 +28,10 @@ gap: 6px;
     font-style: normal;
     font-weight: 400;
 }
-.song-name-section{
+.card-title{
     color: #FFF;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
+    margin: 3px 0 10px 0;
 }
