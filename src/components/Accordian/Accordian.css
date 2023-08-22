@@ -1,0 +1,9 @@
+.accordian-faq-main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.accordian-faq-main-container h2{
+    margin-bottom: 1rem;
+}

@@ -5,6 +5,7 @@ import Card from "./components/Card/Card";
 import GridBox from "./components/GridBox/GridBox";
 import { useEffect, useState } from "react";
 import { fetchTopAlbums, fetchNewAlbums, fetchSongs } from "./api/api";
+import Accordian from "./components/Accordian/Accordian";
 
 export default function App() {
   const [topAlbumsData, setTopAlbumsData] = useState([]);
@@ -32,6 +33,7 @@ export default function App() {
       <GridBox title="Top Albums" data={topAlbumsData} />
       <GridBox title="New Albums" data={newAlbumsData} />
       <GridBox title="Songs" data={songs} type="songs" />
+      <Accordian />
     </>
   );
 }
