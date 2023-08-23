@@ -11,6 +11,7 @@ export default function App() {
   const [topAlbumsData, setTopAlbumsData] = useState([]);
   const [newAlbumsData, setNewAlbumsData] = useState([]);
   const [songs, setSongs] = useState([]);
+  const [totalData, setTotalData] = useState([]);
 
   useEffect(() => {
     generateData();
@@ -25,10 +26,12 @@ export default function App() {
 
     const songsResponse = await fetchSongs();
     setSongs(songsResponse);
+
+    setTotalData([...topAlbumsResponse, ...newAlbumsResponse]);
   };
   return (
     <>
-      <NavBar />
+      <NavBar totalData={totalData} />
       <Hero />
       <GridBox title="Top Albums" data={topAlbumsData} />
       <GridBox title="New Albums" data={newAlbumsData} />

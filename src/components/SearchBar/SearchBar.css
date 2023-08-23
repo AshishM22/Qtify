@@ -14,7 +14,6 @@
   padding: 5px;
   padding-right: 10px;
 }
-
 .search-container input {
   width: 568px;
   height: 48px;
@@ -22,6 +21,60 @@
   padding: 10px;
   padding-right: 0;
 }
+
+#input-options {  
+  position: absolute;
+  top: 4rem;
+  left: -7rem;
+  width: 50rem;
+  z-index: 2;
+  overflow: auto;
+  border: 1px solid var(--primary-color);
+  border-top: 0;
+  background-color: var(--black-color);
+  border-radius: 0 0 10px 10px;
+ 
+}
+.input-options-list{
+  list-style-type: none;
+  display: block;
+  width: 95%;
+  height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px 10px 10px;
+}
+.input-options-list .mini-container{
+  display: flex;
+  column-gap: 10px;
+  align-items: center ;
+}
+.input-options-list img{
+  display: block;
+  height: 3.4rem;
+  width: 5rem;
+  border: 5px solid #1D1D1D;
+  border-radius: 10px;
+}
+/* This almosts hide the scroolbar */
+.scrollable-container::-webkit-scrollbar {
+  width: 0.1px;
+  background-color: transparent;
+}
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+a{
+  cursor: pointer;
+  text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+
 @media (max-width: 1000px) {
   .search-container input {
     width: 400px;

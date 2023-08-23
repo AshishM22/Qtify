@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./GridBox.css";
 import Card from "../Card/Card";
-import Carousel from "../Carousel/Carousel";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -57,7 +56,7 @@ function GridBox({ title, data, type }) {
         <h3>{title}</h3>
         <button onClick={handleToggle}>{buttonText}</button>
       </div>
-      {type === "songs" && (
+      {type && (
         <CustomTabs data={data} value={value} handleChange={handleChange} />
       )}
 
@@ -90,7 +89,7 @@ function GridBox({ title, data, type }) {
 
           {filteredData.map((item) => (
             <SwiperSlide>
-              <Card item={item} type={type} />
+              <Card key={item.id} item={item} type={type} />
             </SwiperSlide>
           ))}
         </Swiper>
