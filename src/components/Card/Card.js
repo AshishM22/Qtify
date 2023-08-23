@@ -2,12 +2,11 @@ import React from "react";
 import "./Card.css";
 import { Tooltip, Chip, Box, Tabs, Tab } from "@mui/material";
 
-const Card = ({ item, type }) => {
+const Card = ({ item, type, setCurrentSong }) => {
   if (type === "songs") {
-    console.log(item);
     const { title, likes, image } = item;
     return (
-      <div>
+      <div onClick={() => setCurrentSong(item)}>
         <div className="card-container">
           <img src={image} alt="card-image" />
           <div className="card-container--body">

@@ -27,13 +27,13 @@
   top: 4rem;
   left: -7rem;
   width: 50rem;
+  max-height: 25rem;
   z-index: 2;
   overflow: auto;
   border: 1px solid var(--primary-color);
   border-top: 0;
   background-color: var(--black-color);
   border-radius: 0 0 10px 10px;
- 
 }
 .input-options-list{
   list-style-type: none;

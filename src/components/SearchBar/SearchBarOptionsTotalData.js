@@ -1,5 +1,4 @@
 const SearchBarOptionsTotalData = ({ item }) => {
-  console.log(item);
   return (
     <a>
       <li className="input-options-list">

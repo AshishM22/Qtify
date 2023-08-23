@@ -10,7 +10,7 @@ import LeftNavigation from "../Carousel/LeftNavigation/LeftNavigation";
 import RightNavigation from "../Carousel/RightNavigation/RightNavigation";
 import CustomTabs from "../CustomTabs/CustomTabs";
 
-function GridBox({ title, data, type }) {
+function GridBox({ title, data, type, setCurrentSong }) {
   const [buttonText, setButtonText] = useState("Show all");
   const [isCollapse, setIsCollapse] = useState(true);
   const [filteredData, setFilteredData] = useState([]);
@@ -67,7 +67,7 @@ function GridBox({ title, data, type }) {
           }
         >
           {filteredData.map((item) => (
-            <Card item={item} type={type} />
+            <Card item={item} type={type} setCurrentSong={setCurrentSong} />
           ))}
         </div>
       ) : (
@@ -89,7 +89,12 @@ function GridBox({ title, data, type }) {
 
           {filteredData.map((item) => (
             <SwiperSlide>
-              <Card key={item.id} item={item} type={type} />
+              <Card
+                key={item.id}
+                item={item}
+                type={type}
+                setCurrentSong={setCurrentSong}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

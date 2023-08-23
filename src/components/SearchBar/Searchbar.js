@@ -7,7 +7,6 @@ const SearchBar = ({ placeholder, totalData }) => {
   const [searchQuery, setSearchQuery] = useState(null);
   const [showData, setShowData] = useState(false);
   const [filteredData, setFilteredData] = useState(totalData);
-
   const inputRef = useRef(null);
 
   const handleFocus = () => setShowData(true);
@@ -21,7 +20,6 @@ const SearchBar = ({ placeholder, totalData }) => {
     );
     setFilteredData(updatedData);
   }, [searchQuery]);
-  const containerHeight = Math.min("25rem", filteredData.length * 2.5 + "rem");
 
   return (
     <form className="search-container" onSubmit={handleSubmit}>
@@ -30,7 +28,7 @@ const SearchBar = ({ placeholder, totalData }) => {
         placeholder={placeholder}
         className="SearchField"
         required
-        searchQuery={searchQuery}
+        value={searchQuery}
         onChange={handleChange}
         ref={inputRef}
         onFocus={handleFocus}
@@ -38,7 +36,9 @@ const SearchBar = ({ placeholder, totalData }) => {
       />
       {showData && (
         <ul
-          style={{ height: containerHeight }}
+          style={{
+            height: Math.min("25rem", filteredData.length * 2.5 + "rem"),
+          }}
           id="input-options"
           className="scrollable-container"
         >
