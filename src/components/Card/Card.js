@@ -6,7 +6,7 @@ const Card = ({ item, type, setCurrentSong }) => {
   if (type === "songs") {
     const { title, likes, image } = item;
     return (
-      <div onClick={() => setCurrentSong(item)}>
+      <div onClick={() => setCurrentSong(item)} style={{ cursor: "pointer" }}>
         <div className="card-container">
           <img src={image} alt="card-image" />
           <div className="card-container--body">

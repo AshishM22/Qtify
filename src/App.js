@@ -6,6 +6,7 @@ import { fetchTopAlbums, fetchNewAlbums, fetchSongs } from "./api/api";
 import Accordian from "./components/Accordian/Accordian";
 import CurrentSong from "./components/CurrentSongPlaying/CurrentSong";
 import "./App.css";
+import SongsPage from "./components/SongsPage/SongsPage";
 
 export default function App() {
   const [topAlbumsData, setTopAlbumsData] = useState([]);
